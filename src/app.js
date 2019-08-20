@@ -4,7 +4,9 @@ import TodoForm from './TodoForm';
 
 class App extends Component {
   state = {
-    todos: [],
+    todos: [
+      {id: 1, content:'one', complete:false}
+    ],
     UI: 'all'
   }
 
@@ -42,11 +44,10 @@ class App extends Component {
     this.setState({
       UI: string
     });
-    console.log(status)
-    console.log(this.state.UI)
   }
 
   render(){
+
     let todos = [];
 
     if (this.state.UI == 'all') {
@@ -66,13 +67,16 @@ class App extends Component {
           <button onClick={() => this.updateUI('active')}>Active</button>
           <button onClick={() => this.updateUI('completed')}>Completed</button>
         </div>
-
-        <Todos 
-          fc={this.state.todos} 
-          dt={this.deleteTodo}
-          tc={this.toggleComplete}
-        />
-
+        
+        {todos.map(x => (
+          <Todos 
+            key={x.id}
+            dt={() => this.deleteTodo(x.id)}
+            tc={() => this.toggleComplete(x.id)}
+            x={x}
+          />
+        ))}
+        
         <TodoForm at={this.addTodo}/>
 
       </div>

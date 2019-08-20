@@ -1,34 +1,43 @@
 import React from 'react';
 
-const Todos = ({fc, dt, tc}) => {
+// const Todos = ({dt, tc}) => {
 
-  const todoList = fc.length ? (
+//         <div className='collection-item'>
+//           <button onClick={dt}>x</button>
+//           <span 
+//             onClick={tc}
+//             style={{
+//               textDecoration: x.complete ? 'line-through' : ''
+//             }}
+//           > 
+//             {x.content}
+//           </span>
+//         </div>
+   
 
-    fc.map(x => {
-      return (
-        <div className='collection-item' key={x.id}>
-          <button onClick={() => {dt(x.id)}}>x</button>
-          <span 
-            onClick={() => {tc(x.id)}}
-            style={{
-              textDecoration: x.complete ? 'line-through' : ''
-            }}
-          > 
-            {x.content}
-          </span>
-        </div>
-      )
-    })
-  ) : (
-    <p className='center'>No more todos!</p>
-  )
+//   return (
+//     <div className='todos collection'>
+//       {todoList}
+//     </div>
+//   )
 
-  return (
-    <div className='todos collection'>
-      {todoList}
+// }
+
+// export default Todos
+
+
+export default props => (
+  <div className='container-item'>
+    <button onClick={props.dt}>x</button>
+    <div 
+      style={{
+        textDecoration: props.x.complete ? 'line-through' : '',
+        display: 'inline'
+      }}
+      onClick={props.tc }
+      className='container-item'
+    >
+      {props.x.content}
     </div>
-  )
-
-}
-
-export default Todos
+  </div>
+);

@@ -36,7 +36,7 @@ class TodoForm extends Component {
             onChange={this.handleChange}
             value={this.state.content} 
           />
-          <button onClick={this.handleSubmit}>Add</button>
+          <button onClick={this.handleSubmit} value={this.state.content} >Add</button>
         </form>
       </div>
     )
