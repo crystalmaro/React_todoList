@@ -1,31 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-// const todos = [
-//   {
-//     task: 'make react tutorial',
-//     isCompleted: false
-//   },
-//   {
-//     task: 'eat dinner',
-//     isCompleted: true
-//   }
-// ]
+import Ninjas from './ninja'
 
 class App extends React.Component {
   state = {
     name: 'Ryu',
     age: 30
   }
+  handleChange = (e) => {
+    this.setState({
+      // e.preventDefault();
+      name: e.target.value
+    });
+  }
+  handleSubmit = (e) => {
+      e.preventDefault();
+      console.log("hi", this.state.name)
+  }
   render() {
     return (
       <div className='app-content'>
         <h1>ninja</h1>
-        <p>My name is: { this.state.name } and I am { this.state.age }</p>
-        <form>
-          <input type="text" />
+        <p>My name is: { this.state.name } and 111111 I am { this.state.age }</p>
+        <form onSubmit={this.handleSubmit}>
+          <input type="text" onChange={this.handleChange}/>
           <button>Submit</button>
         </form>
+        <Ninjas />
       </div>
     )
   }
