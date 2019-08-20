@@ -1,29 +1,42 @@
-import React, { Component } from 'react';
-import TodoList from './components/TodoList';
+import React, { Component } from 'react'; 
+import Todos from './Todos';
+import TodoForm from './TodoForm';
 
 class App extends Component {
   state = {
-    count: 0
-  };
+    todos: [
+      {id: 1, content: 'one'},
+      {id: 2, content: 'two'}
+    ]
+  }
 
-  increment = () => {
-    this.setState({
-      count: this.state.count + 1
+  deleteTodo = (id) => {
+    const todos = this.state.todos.filter(x => {
+      return x.id !== id
     });
-  };
-
-  decrement = () => {
     this.setState({
-      count: this.state.count - 1
-    });
-  };
+      todos: todos
+    })
+  }
 
-  render() {
+  addTodo = (x) => {
+    x.id = Math.random();
+    let todos = [...this.state.todos, x];
+    this.setState({
+      todos: todos
+    })
+   
+  }
+
+  render(){
     return (
-      <div className="App">
-        <TodoList />
+      <div className='todo-app container'>
+        <h1 className='center green-text'>Todo List</h1>
+        <Todos fc={this.state.todos} dt={this.deleteTodo} />
+        <TodoForm at={this.addTodo}/>
+
       </div>
-    );
+    )
   }
 }
 
