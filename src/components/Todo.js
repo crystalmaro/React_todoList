@@ -4,7 +4,7 @@ export default props => (
   <div style={{display: 'flex'}}>
     <div 
       style={{
-          textDecoration: props.x.complete ? 'line-through' : '',
+        textDecoration: props.x.complete ? 'line-through' : '',
       }}
       onClick={props.toggleComplete }
     >

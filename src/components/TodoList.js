@@ -57,7 +57,6 @@ class TodoList extends React.Component {
 
     return (
       <div>
-
         <TodoForm onSubmit={this.addTodo} />
         {todos.map(x => (
           <Todo 
@@ -77,7 +76,6 @@ class TodoList extends React.Component {
           <button onClick={() => this.updateUI('active')} className='statusButton'>Active</button>
           <button onClick={() => this.updateUI('completed')} className='statusButton'>Completed</button>
         </div>
-
       </div>
     );
   }
