@@ -1,12 +1,21 @@
 import React from 'react';
 
-const Todos = ({fc, dt}) => {
+const Todos = ({fc, dt, tc}) => {
 
   const todoList = fc.length ? (
+
     fc.map(x => {
       return (
         <div className='collection-item' key={x.id}>
-          <span onClick={() => {dt(x.id)}}>{x.content}</span>
+          <button onClick={() => {dt(x.id)}}>x</button>
+          <span 
+            onClick={() => {tc(x.id)}}
+            style={{
+              textDecoration: x.complete ? 'line-through' : ''
+            }}
+          > 
+            {x.content}
+          </span>
         </div>
       )
     })

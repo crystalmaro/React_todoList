@@ -13,7 +13,14 @@ class TodoForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.at(this.state)
+
+    // this.props.at(this.state)
+
+    this.props.at({
+      id: Math.random(),
+      content: this.state.content,
+      complete: false
+    })
     this.setState({
       content: ''
     })
@@ -24,7 +31,12 @@ class TodoForm extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <label>Add New Todos:</label>
-          <input type='text' onChange={this.handleChange} value={this.state.content} />
+          <input 
+            type='text' 
+            onChange={this.handleChange}
+            value={this.state.content} 
+          />
+          <button onClick={this.handleSubmit}>Add</button>
         </form>
       </div>
     )
