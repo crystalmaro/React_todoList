@@ -22,13 +22,17 @@
     "babel-loader": "^8.0.6",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
+    "css-loader": "^3.2.0",
     "react-hot-loader": "^4.12.11",
+    "style-loader": "^1.0.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7"
   },
   "dependencies": {
     "react": "^16.9.0",
+    "react-css-modules": "^4.7.11",
     "react-dom": "^16.9.0",
-    "react-live": "^2.1.2"
+    "react-live": "^2.1.2",
+    "shortid": "^2.2.14"
   }
 }
