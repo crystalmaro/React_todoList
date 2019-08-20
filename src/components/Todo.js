@@ -5,7 +5,7 @@ export default props => (
     <button onClick={props.handleDelete}>x</button>
     <div 
       style={{
-        textDecoration: props.x.complete ? 'line-through' : '',
+        textDecoration: props.x.complete ? 'line-through' : ''
       }}
       onClick={props.toggleComplete }
     >
