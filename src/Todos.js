@@ -27,15 +27,14 @@ import React from 'react';
 
 
 export default props => (
-  <div className='container-item'>
+  <div className='collection-item'>
     <button onClick={props.dt}>x</button>
     <div 
       style={{
         textDecoration: props.x.complete ? 'line-through' : '',
         display: 'inline'
       }}
-      onClick={props.tc }
-      className='container-item'
+      onClick={props.tc}
     >
       {props.x.content}
     </div>

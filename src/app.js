@@ -60,14 +60,14 @@ class App extends Component {
 
     return (
       <div className='todo-app container'>
-        <h1 className='center green-text'>Todo List</h1>
+        <h3 className='center green-text'>Todo List</h3>
 
         <div>
           <button onClick={() => this.updateUI('all')}>All</button>
           <button onClick={() => this.updateUI('active')}>Active</button>
           <button onClick={() => this.updateUI('completed')}>Completed</button>
         </div>
-        
+
         {todos.map(x => (
           <Todos 
             key={x.id}
