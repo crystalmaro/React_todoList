@@ -5,7 +5,7 @@ import TodoForm from './TodoForm';
 class App extends Component {
   state = {
     todos: [
-      {id: 1, content:'one', complete:false}
+      {id: 1, content:'oneone', complete:false}
     ],
     UI: 'all'
   }

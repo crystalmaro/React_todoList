@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "watch": "webpack --mode development --watch",
-    "start": "webpack --mode development",
+    "start": "webpack-dev-server --open",
     "deploy": "webpack --mode production"
   },
   "keywords": [],
@@ -26,13 +26,15 @@
     "react-hot-loader": "^4.12.11",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.7"
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
   },
   "dependencies": {
     "react": "^16.9.0",
     "react-css-modules": "^4.7.11",
     "react-dom": "^16.9.0",
     "react-live": "^2.1.2",
+    "redux": "^4.0.4",
     "shortid": "^2.2.14"
   }
 }
