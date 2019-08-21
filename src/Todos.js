@@ -1,42 +1,34 @@
 import React from 'react';
 
-const Todos = ({dt, tc}) => {
+const Todos = ({option, todos, deleteTodo, disappearTodo}) => {
+  let showEmma = todos;  // emma is A貨
+  if(option == 'all'){
+    showEmma = todos
+  } else if(option == 'active'){
+    showEmma = todos.filter(x => x.finished == false)
+  } else if(option == 'finished'){
+    showEmma = todos.filter(x => x.finished == true)
+  }
 
-        <div className='collection-item'>
-          <button onClick={dt}>x</button>
-          <span 
-            onClick={tc}
-            style={{
-              textDecoration: x.complete ? 'line-through' : ''
-            }}
-          > 
-            {x.content}
-          </span>
+  // show the newly updated emma, after 上面的 if 判斷
+  const todoList = showEmma.length ? (
+    showEmma.map(todo => {
+      return (
+        <div className="collection-item" key={todo.id}>
+          <button onClick={() => {disappearTodo(todo.id)}}>disappear</button>
+          <button onClick={() => {deleteTodo(todo.id)}}>x</button>
+          <span style= {todo.finished===true ? {textDecoration: 'line-through',color:'red'} : {color: 'black'}}>{todo.content}</span>
         </div>
-   
+      )
+    })
+  ) : (
+    <p className="center">You have no todo's left, yay!</p>
+  );
 
   return (
-    <div className='todos collection'>
+    <div className="todos collection">
       {todoList}
     </div>
   )
-
 }
-
-export default Todos
-
-
-// export default props => (
-//   <div className='collection-item'>
-//     <button onClick={props.dt}>x</button>
-//     <div 
-//       style={{
-//         textDecoration: props.x.complete ? 'line-through' : '',
-//         display: 'inline'
-//       }}
-//       onClick={props.tc}
-//     >
-//       {props.x.content}
-//     </div>
-//   </div>
-// );
+export default Todos;

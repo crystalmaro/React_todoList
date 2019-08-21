@@ -1,87 +1,76 @@
-import React, { Component } from 'react'; 
-import Todos from './Todos';
-import TodoForm from './TodoForm';
+import React, { Component } from 'react';
+import Todos from './Todos'
+import AddTodo from './AddTodo'
 
 class App extends Component {
   state = {
     todos: [
-      {id: 1, content:'oneone', complete:false}
+      {id: 1, content: 'ONE', finished: false},
+      {id: 2, content: 'play mario kart', finished: false}
     ],
-    UI: 'all'
+    option: 'all'
   }
-
   deleteTodo = (id) => {
+    let todos = this.state.todos;
+    todos.forEach(x=>{
+      if(x.id == id){
+        x.finished = true;
+      }
+    })
     this.setState({
-      todos: this.state.todos.filter(x => x.id !== id)
+      todos:todos
+    })
+    console.log(this.state.todos)
+  }
+
+  disappearTodo = (id) => {
+    this.setState({
+      todos: this.state.todos.filter(x => x.id != id)
+    })
+    console.log(this.state.todos)
+  }
+
+  changeA = () => {
+    this.setState({
+      todos:this.state.todos, //tell that which todos you're referring to
+      option: 'all'
+    })
+  }
+  changeB = () => {
+    this.setState({
+      todos:this.state.todos, //tell that which todos you're referring to
+      option: 'active'
+    })
+  }
+  changeC = () => {
+    this.setState({
+      todos:this.state.todos, //tell that which todos you're referring to
+      option: 'finished'
     })
   }
 
-  addTodo = (x) => {
-    // x.id = Math.random();
-    let todos = [...this.state.todos, x];
-    this.setState({
-      todos: todos
-    })
-  }
 
-  toggleComplete = (id) => {
+  addTodo = (todo) => {
+    todo.id = Math.random();
+    todo.finished = false
+    let todos = [...this.state.todos, todo];
     this.setState({
-      todos: this.state.todos.map(x => {
-        if (x.id == id) {
-          // suppose to update
-          return {
-            ...x,
-            complete: !x.complete
-          }
-        } else {
-          return x;
-        }
-      })
-    })
-  }
-
-  updateUI = (string) => {
-    this.setState({
-      UI: string
+      todos
     });
   }
-
-  render(){
-
-    let todos = [];
-
-    if (this.state.UI == 'all') {
-      todos = this.state.todos;
-    } else if (this.state.UI == 'active') {
-      todos = this.state.todos.filter(x => !x.complete)
-    } else if (this.state.UI == 'completed') {
-      todos = this.state.todos.filter(x => x.complete)
-    }
-
+ 
+  render() {
     return (
-      <div className='todo-app container'>
-        <h3 className='center green-text'>Todo List</h3>
-
-        <div>
-          <button onClick={() => this.updateUI('all')}>All</button>
-          <button onClick={() => this.updateUI('active')}>Active</button>
-          <button onClick={() => this.updateUI('completed')}>Completed</button>
-        </div>
-
-        {todos.map(x => (
-          <Todos 
-            key={x.id}
-            dt={() => this.deleteTodo(x.id)}
-            tc={() => this.toggleComplete(x.id)}
-            x={x}
-          />
-        ))}
-        
-        <TodoForm at={this.addTodo}/>
-
+      <div className="todo-app container">
+        <h1 className="center blue-text">Todo's</h1>
+        <button onClick={this.changeA}>All</button>
+        <button onClick={this.changeB}>Active</button>
+        <button onClick={this.changeC}>Finished</button>
+        <Todos option={this.state.option} todos={this.state.todos} deleteTodo={this.deleteTodo} disappearTodo={this.disappearTodo}/>
+        <AddTodo addTodo={this.addTodo} />
       </div>
-    )
+    );
   }
 }
-
+// option within Todos is a props (property), so Todos can use it
 export default App;
