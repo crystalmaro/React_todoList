@@ -4,10 +4,10 @@ import './index.css';
 
 import Navbar from './components/Navbar';
 import Ranking from './components/Ranking';
-import Game from './components/Game';
+import Try2 from './components/Try2';
 import Tick from './components/Tick';
-import Sliding from './components/Sliding';
-import Kitty from './components/Kitty.js';
+import Try1 from './components/Try1';
+import Puzzle from './components/Puzzle';
 
 class App extends Component {
   render() {
@@ -16,10 +16,10 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <Tick />
-          <Route exact path='/' component={Game}/>
+          <Route exact path='/' component={Puzzle}/>
           <Route path='/ranking' component={Ranking} />
-          <Route path='/Sliding' component={Sliding} />
-          <Route path='/Kitty' component={Kitty} />
+          <Route path='/try1' component={Try1} />
+          <Route path='/try2' component={Try2} />
         </div>
       </BrowserRouter>
     );

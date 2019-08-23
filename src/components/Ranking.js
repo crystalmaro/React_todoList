@@ -18,6 +18,7 @@ class Ranking extends Component {
     return (
       <div className='container'>
         <div>Ranking: {this.state.player}</div>
+        <div>Nobody has won the game yet.</div>
       </div>
     )
   }

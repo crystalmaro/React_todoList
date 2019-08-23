@@ -1,8 +1,8 @@
+
 import React, { Component } from 'react';
-import UserInfo from './UserInfo';
 import Layout from './Layout';
 
-class Game extends Component {
+class Try2 extends Component {
   state = {
     positions: Math.floor(Math.random() * 10),
   }
@@ -10,7 +10,6 @@ class Game extends Component {
   render() {
     return (
       <div className='container'>
-        <UserInfo />
         <Layout />
         <div>random number: {this.state.positions}</div>
       </div>
@@ -18,4 +17,4 @@ class Game extends Component {
   }
 }
 
-export default Game
+export default Try2

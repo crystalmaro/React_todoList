@@ -7,8 +7,8 @@ const Navbar = () => {
         <ul>
           <li><NavLink exact to="/">Game</NavLink></li>
           <li><NavLink to='/ranking'>Ranking</NavLink></li>
-          <li><NavLink to='/Sliding'>Sliding</NavLink></li>
-          <li><NavLink to='/Kitty'>Kitty</NavLink></li>
+          <li><NavLink to='/try1'>Try1</NavLink></li>
+          <li><NavLink to='/try2'>Try2</NavLink></li>
         </ul>
     </nav> 
   )
