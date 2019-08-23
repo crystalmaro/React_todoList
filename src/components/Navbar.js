@@ -1,15 +1,13 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 const Navbar = () => {
   return (
-    <nav className="nav-wrapper red darken-3">
+    <nav className="nav-wrapper blue lighten-3">
       <div className="container">
-        <Link className="brand-logo" to="/">Poke' Times</Link>
         <ul className="right">
-          <li><NavLink exact to="/">Home</NavLink></li>
-          <li><NavLink to='/about'>About</NavLink></li>
-          <li><NavLink to='/contact'>Contact</NavLink></li>
+          <li><NavLink exact to="/">Game</NavLink></li>
+          <li><NavLink to='/ranking'>Ranking</NavLink></li>
         </ul>
       </div>
     </nav> 

@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import Navbar from './components/Navbar';
 import { Route, BrowserRouter } from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Contact from './components/Contact';
-import Post from './components/Post';
+
+import Navbar from './components/Navbar';
+import Ranking from './components/Ranking';
+import Game from './components/Game';
 import Tick from './components/Tick';
 
 class App extends Component {
@@ -14,11 +13,8 @@ class App extends Component {
         <div className="App">
           <Navbar />
           <Tick />
-          <Tick />
-          <Route exact path='/' component={Home}/>
-          <Route path='/about' component={About} />
-          <Route path='/contact' component={Contact} />
-          <Route path='/:post_id' component={Post} />
+          <Route exact path='/' component={Game}/>
+          <Route path='/ranking' component={Ranking} />
         </div>
       </BrowserRouter>
     );
