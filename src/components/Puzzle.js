@@ -8,12 +8,6 @@ const layout = range(0, 9).map(n => {
   return [80 * col, 80 * row];
 });
 
-const player = {
-  id:'',
-  name:'',
-  score:''
-}
-
 export default class APP extends Component {
   constructor(props) {
     super(props);
@@ -27,12 +21,6 @@ export default class APP extends Component {
     this.setState({
       step: this.state.step+1
     })
-  }
-
-  updateWinner = () => {
-    p.id = Math.random();
-    p.score = this.state.step;
-    p.name = ''
   }
 
   updatePosition(index) {
@@ -50,12 +38,11 @@ export default class APP extends Component {
         return index === 0 || parseInt(array[index - 1]) <= parseInt(value)
       });
       if (win) {
-        window.alert('You won!!!');
+        window.alert('You won!');
       }
     }
   }
 
-  
   render() {
     return (
       <div className="game">

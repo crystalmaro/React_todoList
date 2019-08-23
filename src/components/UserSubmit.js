@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 class UserSubmit extends Component {
   state = {
-    name:''
+    player:''
   }
 
   // componentDidMount(){
@@ -12,7 +12,7 @@ class UserSubmit extends Component {
 
   handleChange = (e) => {
     this.setState({
-      name: e.target.value
+      player: e.target.value
     })
   };
  
@@ -20,7 +20,7 @@ class UserSubmit extends Component {
     e.preventDefault();
     this.props.addLS(this.state);
     this.setState({
-      name:''
+      player:''
     })
   };
 
@@ -28,7 +28,7 @@ class UserSubmit extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-            <input type="text" onChange={this.handleChange} value={this.state.name} />
+            <input type="text" onChange={this.handleChange} value={this.state.player} />
             <button>Submit Name</button>
         </form>
       </div>

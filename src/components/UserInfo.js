@@ -5,18 +5,23 @@ import UserSubmit from './UserSubmit'
 export default class UserInfo extends Component {
 
   state = {
-    id:1,player:'one',score:0
+    data: [
+      {id:'',player:'',score:''},
+    ]
   }
 
-  addLS = (data) => {
-    data.id = Math.random();
-    data.score = 0
-    let arr = [...this.state.arr, data]
+  addLS = (x) => {
+    x.id = Math.random();
+    x.score = 0
+    let data = [...this.state.data, x]
     this.setState({
-      arr:arr
+      data
     })
-    console.log(arr)
-    localStorage.setItem('data', player)
+    console.log(x)
+    // Submit action in UserSubmit.js
+    // pass the value to UserInfo.js (current file)
+    // save it to localStorage
+    localStorage.setItem('player', JSON.stringify(data))
   }
 
   render() {
