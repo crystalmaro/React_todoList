@@ -1,0 +1,45 @@
+body{
+  padding: 0;
+}
+/* nav{
+  background: lightgray;
+  padding: 5px 0;
+}*/
+ul{
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+/*li{
+  border: 1px solid black;
+  padding: 0 20px;
+} */
+.gridContainer{
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 240px;
+  background: lightsteelblue;
+}
+.grid{
+  border: 1px solid black;
+  width: 33%;
+  height: 80px;
+  text-align: center;
+}
+
+/* kitty */
+.game{
+  margin: auto;
+
+}
+.cell{
+  background: pink;
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
+  text-align: center;
+}
+.empty{
+  background: lightgrey;
+}

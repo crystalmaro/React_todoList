@@ -1,37 +1,29 @@
-import React, { Component } from 'react';
-// import ls from 'local-storage';
+import React, { Component } from 'react'
+import UserSubmit from './UserSubmit'
 
-class UserInfo extends Component {
+
+export default class UserInfo extends Component {
+
   state = {
-    player: ''
+    id:1,player:'one',score:0
   }
 
-  // componentDidMount(){
-  //   ls.get('key')
-  // }
-
-  handleChange = (e) => {
+  addLS = (data) => {
+    data.id = Math.random();
+    data.score = 0
+    let arr = [...this.state.arr, data]
     this.setState({
-      player: e.target.value
+      arr:arr
     })
-  };
- 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    const player = this.state.player;
-    localStorage.setItem('player', player)
-  };
+    console.log(arr)
+    localStorage.setItem('data', player)
+  }
 
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-            <input type="text" onChange={this.handleChange} value={this.state.player} />
-            <button>Submit Name</button>
-        </form>
+        <UserSubmit addLS={this.addLS} />
       </div>
     )
   }
 }
-
-export default UserInfo

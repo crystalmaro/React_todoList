@@ -5,8 +5,6 @@ class Tick extends Component {
     super(props)
     this.state = {
       date: new Date(),
-      count: 0,
-      text: 'hhh'
     }
   }
 
@@ -31,7 +29,8 @@ class Tick extends Component {
   render() {
     return (
       <div className='container'>
-        <div>{this.state.count} {this.state.text} {this.state.date.toLocaleTimeString()}</div>
+        <div>{this.state.date.toLocaleDateString()}</div>
+        <div>{this.state.date.toLocaleTimeString()}</div>
       </div>
     )
   }
