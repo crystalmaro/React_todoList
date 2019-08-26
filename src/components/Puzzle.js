@@ -18,8 +18,11 @@ export default class APP extends Component {
   }
   
   updateStep(){
-    this.setState({
-      step: this.state.step+1
+    // this.setState({
+    //   step: this.state.step+1
+    // })
+    this.setState((preState) => {
+      return {step: preState.step+1}
     })
   }
 
