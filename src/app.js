@@ -8,6 +8,7 @@ import Try2 from './components/Try2';
 import Tick from './components/Tick';
 import Try1 from './components/Try1';
 import Puzzle from './components/Puzzle';
+import TicTacToe from './components/TicTacToe';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
           <Route path='/ranking' component={Ranking} />
           <Route path='/try1' component={Try1} />
           <Route path='/try2' component={Try2} />
+          {/* <Route path='/tictactoe' component={TicTacToe} /> */}
         </div>
       </BrowserRouter>
     );

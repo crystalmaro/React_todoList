@@ -9,6 +9,7 @@ const Navbar = () => {
           <li><NavLink to='/ranking'>Ranking</NavLink></li>
           <li><NavLink to='/try1'>Try1</NavLink></li>
           <li><NavLink to='/try2'>Try2</NavLink></li>
+          {/* <li><NavLink to='/tictactoe'>TicTacToe</NavLink></li> */}
         </ul>
     </nav> 
   )

@@ -29,7 +29,7 @@ class Sliding extends Component {
           <SlidingTilePuzzle
             solvePuzzle={this.state.solvePuzzle}
             newPuzzle={this.state.newPuzzle}
-            maxIterations={50}
+            maxIterations={300}
             image='https://i.ibb.co/rwZYsyw/grid.jpg'
             size={300}
           />
